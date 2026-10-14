@@ -29,8 +29,7 @@ function App() {
     setLoading(false)
   }, [])
 
-
-  return <div className='app'>
+  return <div >
 
     <div>
       <Navbar></Navbar>

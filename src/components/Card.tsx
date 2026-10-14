@@ -10,9 +10,9 @@ function Card({ course }: any) {
             </div>
         </div>
 
-        <div className="title">
-            <p>{course.title}</p>
-            <p>{course.description}</p>
+        <div className="text">
+            <p className='title'>{course.title}</p>
+            <p className='description'>{course.description}</p>
         </div>
     </div>
 }

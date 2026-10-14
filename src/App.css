@@ -1,10 +1,9 @@
 .filter {
-  /* border: 1px solid rgb(100, 5, 5); */
   text-align: center;
 }
 
-.cards-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
