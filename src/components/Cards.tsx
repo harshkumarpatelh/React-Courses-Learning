@@ -1,23 +1,31 @@
-import { filters } from "../data/data";
+import { useState } from "react";
 import Card from "./Card";
 import './Cards.css'
 
-function Cards({ courses }: any) {
+function Cards({ courses, category }: any) {
 
-    const allCourses: any[] = []
-    const getAllCourses = () => {
-        filters.forEach((filter) => {
-            if (filter.title !== 'All')
-                allCourses.push(...courses[filter.title])
-        })
+    const [likedCourses, setLikedCourses] = useState([]);
+
+    let allCourses: any[] = []
+
+    if (courses) {
+        if (category === 'All') {
+            for (const key in courses) {
+                allCourses.push(...courses[key])
+            }
+        }
+        else {
+            allCourses = courses[category]
+        }
+
     }
-
-    if (courses)
-        getAllCourses()
 
     return (<div className="cards">
         {allCourses.map((course) => {
-            return <Card key={course.id} course={course}></Card>
+            return <Card key={course.id} course={course}
+                likedCourses={likedCourses}
+                setLikedCourses={setLikedCourses}
+            ></Card>
         })}
     </div >)
 }

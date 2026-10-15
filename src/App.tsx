@@ -11,6 +11,8 @@ function App() {
 
   const [courses, setCourses] = useState(null)
   const [loading, setLoading] = useState(true)
+
+  const [category, setCategory] = useState('All')
   useEffect(() => {
     setLoading(true);
     async function getData() {
@@ -36,11 +38,11 @@ function App() {
     </div>
 
     <div className='filter'>
-      <Filter filters={filters}></Filter>
+      <Filter filters={filters} category={category} setCategory={setCategory}></Filter>
     </div>
 
     <div className='cards-container'>
-      {loading ? (<Spinner></Spinner>) : (<Cards courses={courses}></Cards>)}
+      {loading ? (<Spinner></Spinner>) : (<Cards courses={courses} category={category}></Cards>)}
     </div>
 
   </div >

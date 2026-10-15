@@ -2,7 +2,7 @@
   padding: 0.5rem;
   margin: 10px;
   border: 1px solid white;
-  background-color: rgb(14, 23, 39);
+  background-color: rgb(8, 15, 28);
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -10,4 +10,9 @@
 
 .filter-button:hover {
   background-color: darkgray;
+}
+
+.hilighter{
+  border: none;
+  background-color: rgb(43, 63, 98);
 }
